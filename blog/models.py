@@ -1,5 +1,8 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
+
+
 
 # Create your models here.
 class Post(models.Model):
@@ -10,6 +13,9 @@ class Post(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    def get_absolute_url(self):
+        return reverse('frontpage')
+
     class Meta:
         ordering = ['-date_added']
 
@@ -19,6 +25,7 @@ class Comment(models.Model):
     email = models.EmailField()
     body = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
+
 
     class Meta:
         ordering = ('-date_added',)

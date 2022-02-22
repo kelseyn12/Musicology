@@ -1,9 +1,12 @@
 from django.shortcuts import render,redirect
 from .models import Comment, Post
 from .forms import CommentForm
+from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+
 
 # Create your views here.
 
@@ -31,6 +34,7 @@ def frontpage(request):
 
 def about(request):
     return render(request, 'about.html')
+
 @login_required
 def post_detail(request, slug):
     post = Post.objects.get(slug=slug)
@@ -48,3 +52,13 @@ def post_detail(request, slug):
         form = CommentForm()
 
     return render(request, 'blog/post_detail.html', {'post': post, 'form': form})
+
+class UpdatePostView(UpdateView):
+    model = Post
+    template_name = 'update_post.html'
+    fields = ('title', 'slug', 'intro', 'body',)
+
+class DeletePostView(DeleteView):
+    model = Post
+    template_name = 'delete_post.html'
+    success_url = reverse_lazy('frontpage')
