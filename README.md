@@ -9,7 +9,6 @@ Musicology is a Python/Django web application with CRUD operations that allows u
 <li>Python</li>
 <li>Django</li>
 <li>PostgreSQL</li>
-<li>JavaScript</li>
 <li>CSS</li>
 <li>Bootsrap</li>
 </ul>
