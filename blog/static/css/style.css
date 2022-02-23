@@ -1,5 +1,38 @@
 *{
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    background-color: rgb(235, 225, 225);
+}
+
+
+.about {
+    padding-top: 20px;
+    color: rgb(10, 150, 136);
+}
+.about_p {
+    padding-top: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.post_link {
+    color:black;
+}
+
+.post_link:hover {
+    color:rgb(10, 150, 136);
+}
+
+.read_more {
+    color:black;
+}
+
+.read_more:hover {
+    color:rgb(10, 150, 136);
 }
 
