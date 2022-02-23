@@ -56,7 +56,7 @@ def post_detail(request, slug):
 class UpdatePostView(UpdateView):
     model = Post
     template_name = 'update_post.html'
-    fields = ('title', 'slug', 'intro', 'body',)
+    fields = ('title', 'slug', 'intro', 'body','link',)
 
 class DeletePostView(DeleteView):
     model = Post
